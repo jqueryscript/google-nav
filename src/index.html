@@ -5,58 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>google</title>
-    <script src="//at.alicdn.com/t/font_1518151_un4393vdu7q.js"></script>
+    <script src="//at.alicdn.com/t/font_1518151_oj3nxqi9l4.js"></script>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="logo"></div>
-<!--<div class="search">-->
+<div class="googlelogo"></div>
 <form class="search" action="https://www.baidu.com/s" method="get">
     <button type="submit" class=" icon-search"></button>
-    <input type="search" name="wd"/>
+    <input type="search" name="wd" placeholder="在 Google 上搜索"/>
     <span class=" icon-mic"></span>
 </form>
+
+<!--<div class="buttons">-->
+<!--    <span>Google搜索</span>-->
+<!--    <span>手气不错</span>-->
 <!--</div>-->
-<div class="buttons">
-    <span>Google搜索</span>
-    <span>手气不错</span>
-</div>
 
 <div class="label">
-    <ul>
-        <li>
-            <a href="https://www.taobao.com">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-taobao"></use>
-                </svg>
-                <span class="e">taobao.com</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://youtube.com">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-youtube"></use>
-                </svg>
-                <span>youtube.com</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://twitter.com">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-twitter"></use>
-                </svg>
-                <span>twitter.com</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://jd.com">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-jingdong"></use>
-                </svg>
-                <span>jingdong.com</span>
-            </a>
+    <ul class="siteList">
+        <li class="last">
+            <div class="addButton">
+                <div class="icon-wrapper">
+                    <svg class="icon">
+                        <use xlink:href="#icon-add"></use>
+                    </svg>
+                </div>
+                <div class="text">
+                    新增网站
+                </div>
+            </div>
         </li>
     </ul>
 </div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
