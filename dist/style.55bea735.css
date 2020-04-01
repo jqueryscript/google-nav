@@ -16,7 +16,7 @@ ol {
     list-style: none;
 }
 
-.googlelogo {
+.googleLogo {
     width: 272px;
     height: 92px;
     margin: 164px auto 0 auto;
@@ -25,7 +25,7 @@ ol {
 }
 
 @media (max-width: 500px) {
-    .googlelogo {
+    .googleLogo {
         max-width: 200px;
         max-height: calc(92px * (200 / 272));
     }
@@ -125,11 +125,11 @@ ol {
     margin-right: 13px;
 }
 
-.label .siteList li:hover{
+.label .siteList li:hover {
     cursor: pointer;
 }
 
-.label .siteList .site .link{
+.label .siteList .site .link {
     font-size: 13px;
 }
 
@@ -187,4 +187,4 @@ ol {
     display: block;
 }
 
-/*# sourceMappingURL=style.cb692891.css.map */
+/*# sourceMappingURL=style.55bea735.css.map */
