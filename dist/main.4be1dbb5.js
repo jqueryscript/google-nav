@@ -122,15 +122,13 @@ var $siteList = $('.siteList');
 var $lastLi = $('li.last');
 var x = localStorage.getItem('x');
 var xObject = JSON.parse(x);
-var hashMap = xObject || [// {
-  //     logo: 'A',
-  //     url: 'https://www.acfun.cn'
-  // },
-  // {
-  //     logo: 'B',
-  //     url: 'https://www.bilibili.com'
-  // }
-];
+var hashMap = xObject || [{
+  logo: 'A',
+  url: 'https://www.acfun.cn'
+}, {
+  logo: 'B',
+  url: 'https://www.bilibili.com'
+}];
 
 var simplifyUrl = function simplifyUrl(url) {
   var newUrl = url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
@@ -202,4 +200,4 @@ window.onbeforeunload = function () {
   localStorage.setItem('x', string);
 };
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.3a4dd34a.js.map
+//# sourceMappingURL=main.4be1dbb5.js.map
