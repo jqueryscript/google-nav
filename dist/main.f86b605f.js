@@ -197,5 +197,23 @@ $('.addButton').on('click', function () {
   console.log(hashMap);
   render();
 });
+$(document).on("keypress", function (e) {
+  // 等价于const key = e.key;表示按下的是键盘上哪个键？把这个键赋值给key
+  var key = e.key;
+  console.log(key); // 遍历hashMap数组
+
+  for (var i = 0; i < hashMap.length; i++) {
+    // 如果hashMap数组的某个对象的logo属性的小写字母就是key：
+    if (hashMap[i].logo.toLowerCase() === key) {
+      // 那么证明匹配按键成功，就打开按键对应的这个对象的url链接：
+      window.open(hashMap[i].url);
+    }
+  }
+}); //阻止搜索框的keypress事件冒泡到document上，
+// 不阻止的话到冒泡到document上，然后打开对应的网址
+
+$('input').on('keypress', function (e) {
+  e.stopPropagation();
+});
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.a4846be8.js.map
+//# sourceMappingURL=main.f86b605f.js.map
