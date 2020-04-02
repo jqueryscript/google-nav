@@ -94,6 +94,26 @@ $('.addButton').on('click', () => {
     });
     window.localStorage.setItem('x', JSON.stringify(hashMap));
     console.log('触发了一次点击添加网址事件');
-    console.log(hashMap)
+    console.log(hashMap);
     render();
+});
+
+$(document).on("keypress", e => {
+    // 等价于const key = e.key;表示按下的是键盘上哪个键？把这个键赋值给key
+    const {key} = e;
+    console.log(key);
+    // 遍历hashMap数组
+    for (let i = 0; i < hashMap.length; i++) {
+        // 如果hashMap数组的某个对象的logo属性的小写字母就是key：
+        if (hashMap[i].logo.toLowerCase() === key) {
+            // 那么证明匹配按键成功，就打开按键对应的这个对象的url链接：
+            window.open(hashMap[i].url);
+        }
+    }
+});
+
+//阻止搜索框的keypress事件冒泡到document上，
+// 不阻止的话到冒泡到document上，然后打开对应的网址
+$('input').on('keypress', (e) => {
+    e.stopPropagation();
 });
