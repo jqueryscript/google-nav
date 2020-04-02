@@ -35,7 +35,7 @@ ol {
     position: relative;
     max-width: 561px;
     height: 44px;
-    margin: 40px auto 20px;
+    margin: 40px auto 20px auto;
     border-radius: 22px;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 }
@@ -187,4 +187,4 @@ ol {
     display: block;
 }
 
-/*# sourceMappingURL=style.55bea735.css.map */
+/*# sourceMappingURL=style.b2db333e.css.map */
