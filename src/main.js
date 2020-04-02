@@ -46,11 +46,12 @@ const render = () => {
         });
         //监听li元素里的icon图标的点击事件：
         $li.on('click', '.close', (e) => {
-            console.log('触发了一次点击事件');
+            console.log('触发了一次点击删除网址事件');
             e.stopPropagation();//阻止冒泡到li上
             hashMap.splice(index, 1);
-            console.log(hashMap);
             //删除hashMap后重新渲染hashMap里的节点到页面
+            window.localStorage.setItem('x', JSON.stringify(hashMap));
+            console.log(hashMap);
             render();
         });
     });
@@ -87,17 +88,12 @@ $('.addButton').on('click', () => {
         //qq.com
         url = 'https://www.' + url;
     }
-    console.log(url);
     hashMap.push({
         logo: simplifyUrl(url)[0].toUpperCase(),
         url: url
     });
-
+    window.localStorage.setItem('x', JSON.stringify(hashMap));
+    console.log('触发了一次点击添加网址事件');
+    console.log(hashMap)
     render();
 });
-
-//浏览器本地存储，每次刷新前存储上次数据
-window.onbeforeunload = () => {
-    const string = JSON.stringify(hashMap);
-    localStorage.setItem('x', string);
-};
