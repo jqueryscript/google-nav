@@ -41,9 +41,37 @@ const render = () => {
         //监听li元素的点击事件，点击时跳转到该li元素的url网址;
         // 为什么不在创建li元素时直接加一个a标签呢？
         // 问得好，因为这样的话就会导致点击icon-close也会跳转到新链接。
-        $li.on('click', () => {
-            window.open(node.url);
-        });
+
+        //下边代码45~72行基本都是加的，为了实现手机端双击显示删除按钮（并且不会触发两次单击事件）
+        (function () {
+            let sUserAgent = navigator.userAgent;
+            if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
+                console.log("手机端");
+                let timeOut = null;
+                $li.on('click', () => {
+                    window.clearTimeout(timeOut);
+                    timeOut = setTimeout(() => {
+                        window.open(node.url);
+                    }, 200);
+                    // window.open(node.url);
+                });
+
+                //适配手机端，双击li显示删除图标
+                const $close = $(".close");
+                $li.on('dblclick', function () {
+                    window.clearTimeout(timeOut);
+                    $close.style.display = 'block';
+                    window.alert('哈哈');
+                });
+            } else {
+                console.log("电脑端");
+                $li.on('click', () => {
+                    window.open(node.url);
+                });
+            }
+        })();
+
+
         //监听li元素里的icon图标的点击事件：
         $li.on('click', '.close', (e) => {
             console.log('触发了一次点击删除网址事件');
