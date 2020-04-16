@@ -38,9 +38,6 @@ const render = () => {
                 </div>
             </li>
         `).insertBefore($lastLi);
-        //监听li元素的点击事件，点击时跳转到该li元素的url网址;
-        // 为什么不在创建li元素时直接加一个a标签呢？
-        // 问得好，因为这样的话就会导致点击icon-close也会跳转到新链接。
 
         //下边代码45~72行基本都是加的，为了实现手机端双击显示删除按钮（并且不会触发两次单击事件）
         (function () {
@@ -48,6 +45,7 @@ const render = () => {
             if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
                 console.log("手机端");
                 let timeOut = null;
+                //单击时先清除原来的定时器，然后设置一个新的200s后再跳转：
                 $li.on('click', () => {
                     window.clearTimeout(timeOut);
                     timeOut = setTimeout(() => {
@@ -56,15 +54,19 @@ const render = () => {
                     // window.open(node.url);
                 });
 
-                //适配手机端，双击li显示删除图标
+                //200s内再次点击就会触发双击事件，此时监听双击事件，显示删除图标按钮：
                 const $close = $(".close");
                 $li.on('dblclick', function () {
+                    //也要先清除原来的定时器
                     window.clearTimeout(timeOut);
                     $close.style.display = 'block';
                     window.alert('哈哈');
                 });
             } else {
                 console.log("电脑端");
+                //监听li元素的点击事件，点击时跳转到该li元素的url网址;
+                // 为什么不在创建li元素时直接加一个a标签呢？
+                // 问得好，因为这样的话就会导致点击icon-close也会跳转到新链接。
                 $li.on('click', () => {
                     window.open(node.url);
                 });
