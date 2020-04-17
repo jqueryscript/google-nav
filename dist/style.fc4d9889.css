@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+body {
+    font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+
 ul,
 ol {
     list-style: none;
@@ -47,7 +51,7 @@ ol {
 }
 
 .search:hover {
-    box-shadow: 0 0 4px 0px #ccc;
+    box-shadow: 0 0 4px 0 #ccc;
 }
 
 .search .icon-search {
@@ -107,8 +111,8 @@ ol {
     margin: 20px auto;
 }
 
-@media (max-width: 500px){
-    .label{
+@media (max-width: 500px) {
+    .label {
         max-width: 330px;
     }
 }
@@ -141,7 +145,7 @@ ol {
     justify-content: center;
     align-items: center;
     font-size: 13px;
-    color: rgb(var(--tile-title-color));
+    /*color: rgb(var(--tile-title-color));*/
     /*margin-bottom: 10px;*/
 }
 
@@ -187,4 +191,4 @@ ol {
     display: block;
 }
 
-/*# sourceMappingURL=style.a51fc85a.css.map */
+/*# sourceMappingURL=style.fc4d9889.css.map */
