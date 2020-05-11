@@ -149,7 +149,7 @@ ol {
     /*margin-bottom: 10px;*/
 }
 
-.label svg {
+.label i {
     font-size: 45px;
     padding-bottom: 10px;
 }
@@ -183,7 +183,7 @@ ol {
     display: none;
 }
 
-.label ul .site .close svg {
+.label ul .site .close i {
     font-size: 20px;
 }
 
