@@ -1,12 +1,3 @@
-# 开发
+# Description
 
-```
-yarn global add parcel-bundler
-parcel src/index.html
-```
-
-# build 命令
-
-``` 
-parcel build src/index.html --no-minify --public-url ./
-```
+Google Nav is a jQuery script to create Google Chrome Startup Page inspired website links (shortcuts) on the webpage. It uses HTML5 local storage to save the current site list on the client side. 
